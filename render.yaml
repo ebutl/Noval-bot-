@@ -1,0 +1,27 @@
+services:
+  - type: worker
+    name: noval-ccbot
+    runtime: python
+    plan: starter          # worker tier — free tier does NOT support disks
+    region: oregon
+    branch: main
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: python ccbot.py
+    autoDeploy: true
+    disk:
+      name: botdata
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: BOT_TOKEN
+        sync: false        # set in dashboard, never commit
+      - key: DB_PATH
+        value: /var/data/bot.db
+      - key: API_STATE_PATH
+        value: /var/data/api_endpoints.json
+      - key: SITES_PATH
+        value: /var/data/sites.txt
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: PYTHONUNBUFFERED
+        value: "1"
