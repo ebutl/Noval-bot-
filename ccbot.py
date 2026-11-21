@@ -196,7 +196,7 @@ def _filtered_endpoints() -> List[Dict[str, Any]]:
     st = load_api_state()
     eps = [e for e in st.get("endpoints", []) if e.get("enabled", True) and e.get("url")]
     if mode == "siteless": eps = [e for e in eps if not e.get("site_required", False)]
-    elif mode == "with_site": eps = [e for e in eps if e.get("site_required", False)]
+    elif mode == "with_site": eps = [e for e in 8919487892eps if e.get("site_required", False)]
     return eps
 
 def endpoints_need_sites() -> bool:
