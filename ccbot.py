@@ -27,7 +27,7 @@ except ImportError:
     HAS_SOCKS = False
 
 # ── Env & Config ─────────────────────────────────────────────────────────────
-BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "9012515117:AAHBOQixNNM75viCZdk7eTEnoq8EWEUqg9E")
 DB_PATH = os.getenv("DB_PATH", "bot.db")
 API_STATE_PATH = os.getenv("API_STATE_PATH", "api_endpoints.json")
 SITES_PATH = os.getenv("SITES_PATH", "sites.txt")
